@@ -12,7 +12,7 @@ No app code yet. The repo holds founding documents only.
 ## Documents
 
 - [docs/VISION.md](docs/VISION.md): guiding question, audiences, principles
-- [docs/ARCHITECTURE-DECISION.md](docs/ARCHITECTURE-DECISION.md): rules and data (draft)
+- [docs/ARCHITECTURE-DECISION.md](docs/ARCHITECTURE-DECISION.md): rules and data (accepted)
 - [docs/CONTENT-POLICY.md](docs/CONTENT-POLICY.md): what may and may not be committed
 - [CLAUDE.md](CLAUDE.md): working rules for the AI agent
 
