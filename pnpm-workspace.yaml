@@ -1,0 +1,9 @@
+# Package-manager protections. Configured, not yet verified to block anything.
+
+# Refuse package versions published less than 3 days ago (value is in minutes).
+minimumReleaseAge: 4320
+minimumReleaseAgeStrict: true
+
+# Dependency build scripts are denied unless listed here with `true`.
+allowBuilds: {}
+dangerouslyAllowAllBuilds: false
