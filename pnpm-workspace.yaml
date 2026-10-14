@@ -7,3 +7,5 @@ minimumReleaseAgeStrict: true
 # Dependency build scripts are denied unless listed here with `true`.
 allowBuilds: {}
 dangerouslyAllowAllBuilds: false
+
+blockExoticSubdeps: true

@@ -31,10 +31,11 @@ Set:
 - `minimumReleaseAge: 4320`: package versions published less than 3 days (4320 minutes) ago are not installed.
 - `minimumReleaseAgeStrict: true`: a version that is too new stops the install instead of being added to an exclusion list.
 - `allowBuilds: {}` and `dangerouslyAllowAllBuilds: false`: dependency build scripts are blocked unless a package is approved by name.
+- `blockExoticSubdeps: true`: transitive dependencies may come only from the registry, local paths, workspace links or trusted GitHub repositories, so a transitive git or URL dependency is refused. Direct git and URL dependencies are allowed by design. The setting is [documented on pnpm.io](https://pnpm.io/settings/dependency-resolution#blockexoticsubdeps) and was added in pnpm v10.26.0. `true` is its documented default, but that default has not been verified against the installed pnpm 12.12.1, so it is set explicitly. Like the other four, it is configured, not yet verified.
 
 Left out:
 
-- Blocking git and URL dependencies. The installed pnpm's help and bundled docs name no setting for this, so none is set.
+- Blocking direct git and URL dependencies. No pnpm setting blocks them, and `blockExoticSubdeps` allows them by design, so they are covered only by reviewing `package.json`.
 
 ## Documents
 
