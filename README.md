@@ -7,7 +7,32 @@
 
 ## Status
 
-No app code yet. The repo holds founding documents only.
+Walking skeleton: a Vue 3 + Vite + TypeScript app that shows a "Lanternbook" heading. No features yet.
+
+## Development
+
+Requires Node 24 (see `.nvmrc`) and the pnpm version pinned in `package.json` under `packageManager`.
+
+```sh
+pnpm install
+pnpm check
+```
+
+`pnpm check` runs `typecheck`, `test` and `build` in that order and stops at the first failure. Each can also be run on its own with `pnpm typecheck`, `pnpm test` or `pnpm build`.
+
+### Package-manager protections
+
+These are set in `pnpm-workspace.yaml`. They are **configured, not yet verified**: pnpm reads them, but nothing has yet tested that they block anything.
+
+Set:
+
+- `minimumReleaseAge: 4320`: package versions published less than 3 days (4320 minutes) ago are not installed.
+- `minimumReleaseAgeStrict: true`: a version that is too new stops the install instead of being added to an exclusion list.
+- `allowBuilds: {}` and `dangerouslyAllowAllBuilds: false`: dependency build scripts are blocked unless a package is approved by name.
+
+Left out:
+
+- Blocking git and URL dependencies. The installed pnpm's help and bundled docs name no setting for this, so none is set.
 
 ## Documents
 
