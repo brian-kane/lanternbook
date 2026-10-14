@@ -9,6 +9,8 @@
 
 Walking skeleton: a Vue 3 + Vite + TypeScript app that shows a "Lanternbook" heading. No features yet.
 
+Rules live in `src/rules/` as pure functions, each checked against a golden JSON fixtures file. The first is `abilityModifier`, with its fixtures in `src/rules/abilityModifier.fixtures.json`.
+
 ## Development
 
 Requires Node 24 (see `.nvmrc`) and the pnpm version pinned in `package.json` under `packageManager`.
