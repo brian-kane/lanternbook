@@ -1,5 +1,5 @@
 # Architecture Decision: Rules and Data
-Status: Draft, for owner review
+Status: Accepted
 Date: 2026-10-14
 
 ## Rules
