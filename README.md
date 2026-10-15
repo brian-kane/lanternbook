@@ -37,6 +37,18 @@ Left out:
 
 - Blocking direct git and URL dependencies. No pnpm setting blocks them, and `blockExoticSubdeps` allows them by design, so they are covered only by reviewing `package.json`.
 
+## Local git settings
+
+The owner's personal development environment sets the git options below. They change what some plain git commands do compared with a default install, so they are recorded here rather than left hidden.
+
+They are global per user: they live in the user's global git configuration, outside this repo, and apply to every repository in that environment, not only this one. This repo's scripts and CI must not depend on them, because fresh clones, cloud sessions and dev containers will not have them. This section is the only record of them, and it is a convention with no check.
+
+The behaviour below was observed with git 2.53.0 in a throwaway repository with a local bare repository as its remote, running each command once with an empty global configuration (a default install) and once with only these three settings. Quotes are from that version's own documentation.
+
+- `push.autoSetupRemote = true`: a plain `git push` of a branch with no upstream pushes the branch and sets its upstream to the remote branch of the same name. On a default install the same command fails with "fatal: The current branch <branch> has no upstream branch." and sets nothing. The documentation limits it to a default push ("assume --set-upstream on default push"), and `git push origin <branch>` pushed without setting an upstream. `git -c push.autoSetupRemote=false push` does not switch the setting off: it still set the upstream.
+- `fetch.prune = true`: a plain `git fetch` removes remote-tracking branches whose branch was deleted on the remote, and a plain `git pull` removes them too. On a default install both leave them listed in `git branch -r`. `git -c fetch.prune=false fetch` keeps them for one command.
+- `pull.ff = only`: when local and remote history have diverged, a plain `git pull` refuses with "fatal: Not possible to fast-forward, aborting." A default install also refuses, with "fatal: Need to specify how to reconcile divergent branches.", so for a plain `git pull` the setting changes the message, not the outcome. When a fast-forward is possible, both fast-forward. The setting does not stop an explicit merge: `git pull --no-rebase` and `git pull --no-rebase --ff` each create a merge commit, with the setting and without it.
+
 ## Documents
 
 - [docs/VISION.md](docs/VISION.md): guiding question, audiences, principles
