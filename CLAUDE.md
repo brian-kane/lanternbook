@@ -2,6 +2,7 @@
 
 - Every change goes on a branch and a pull request; the owner reads the diff before merging.
 - Docs ship in the same commit as the change they describe; a decision record may stand alone.
+- Where each kind of information lives is set by `docs/DOCUMENTATION-POLICY.md`; follow it rather than restating it here.
 - One change per prompt. No unrelated edits, and never edit a document the owner did not ask about.
 - Prove every new check with a planted failure, then restore it.
 - Before opening a pull request, run the repo's single `pnpm check` script, which runs typecheck, test and build in that order and stops at the first failure.
