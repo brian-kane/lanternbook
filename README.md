@@ -41,6 +41,7 @@ Left out:
 
 - [docs/VISION.md](docs/VISION.md): guiding question, audiences, principles
 - [docs/ARCHITECTURE-DECISION.md](docs/ARCHITECTURE-DECISION.md): rules and data (accepted)
+- [docs/DOCUMENTATION-POLICY.md](docs/DOCUMENTATION-POLICY.md): where each kind of information lives (accepted)
 - [docs/CONTENT-POLICY.md](docs/CONTENT-POLICY.md): what may and may not be committed
 - [CLAUDE.md](CLAUDE.md): working rules for the AI agent
 
