@@ -20,7 +20,7 @@ pnpm install
 pnpm check
 ```
 
-`pnpm check` runs `typecheck`, `test` and `build` in that order and stops at the first failure. Each can also be run on its own with `pnpm typecheck`, `pnpm test` or `pnpm build`.
+Run `pnpm check` to check a change; the `check` script in `package.json` defines what it runs.
 
 ### Package-manager protections
 
