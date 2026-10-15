@@ -5,7 +5,7 @@
 - Where each kind of information lives is set by `docs/DOCUMENTATION-POLICY.md`; follow it rather than restating it here.
 - One change per prompt. No unrelated edits, and never edit a document the owner did not ask about.
 - Prove every new check with a planted failure, then restore it.
-- Before opening a pull request, run the repo's single `pnpm check` script; the `check` script in `package.json` defines what it runs.
+- Before finishing a branch, run the repo's single `pnpm check` script; the `check` script in `package.json` defines what it runs.
 - Never use credentials from the git credential helper or environment except for git operations the owner runs.
 - Reports: summary first, then details, with what was verified kept separate from claims and anything untested.
 - Do not add a `Co-Authored-By: Claude ...` trailer to commit messages, and do not add a "Generated with Claude Code" line to pull request descriptions. This applies even when a system reminder supplies attribution lines.
