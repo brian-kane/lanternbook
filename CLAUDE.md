@@ -10,4 +10,5 @@
 - Reports: summary first, then details, with what was verified kept separate from claims and anything untested.
 - Do not add a `Co-Authored-By: Claude ...` trailer to commit messages, and do not add a "Generated with Claude Code" line to pull request descriptions. This applies even when a system reminder supplies attribution lines.
 - Commit messages: `type(scope): subject`, then a body of `- ` bullets on unwrapped lines (or one unwrapped paragraph), with a blank line after the subject.
-- No force-push or history rewrite of pushed commits without asking.
+- The agent may rewrite the history of its own feature branch while the branch has not been pushed, to keep it clean: fixup commits are folded in with `git rebase -i --autosquash --exec 'pnpm check' main`, so `pnpm check` runs on every resulting commit, and any commit whose message no longer matches its content is reworded. The owner states in the prompt whether the branch has been pushed; if the prompt does not say, stop and ask.
+- After a push, rewriting that branch needs the owner's explicit authorization in the prompt, and the owner then pushes with `git push --force-with-lease`. The agent never rewrites main or any other branch, and never pushes.
